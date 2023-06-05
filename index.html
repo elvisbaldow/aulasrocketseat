@@ -1,0 +1,161 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulários</title>
+</head>
+<body>
+    <!--Criando formulário-->
+    <!--
+        action = onde será enviado as informações
+        method = forma que será apresentado estas informações
+        fieldset = agrupa campos com mesmo propósito
+        laber = associar e identificar itens de input
+        for = conecta as tags label 
+        input = type: text / date / email / number
+                atributos:
+
+                autocomplete
+                autofocus
+                disabled
+                readonly*
+                value
+                form*
+                name
+                required*
+                placeholder*
+
+                *pode ser usado em quase todos os tipos de campos
+
+        Password = campo para Senha
+                atributos:
+
+                minlength = mínimo de caracteres
+                maxlength = máximo de caracteres
+                size = tamanho do campo
+                pattern = aumentar a segurança da senha aceitando apenas HEXADECIMAL definido tipo [0-9a-fA-F]{4,8} (minimo 4 caracteres e máximo 8 caracteres)
+                placeholder = indicativo no campo "coloque sua senha".
+                readonly / disabled - desabilitar
+                required = campo obrigatório
+                inputmode = numeric (aparece só números no campo - smartfone)
+                autocomplete = "on" (permite a sugestão de senha normalmente usado pelo usuário) / "off" não permite sugerir senha
+
+        URL / Email = campo de email/link
+                atributos:
+
+                placeholder
+                readonly / disabled
+                value
+                required
+                multiple = permite colocar mais de um email separado por virgula
+                minlenght / maxlenght - minimo e máximo caracteres
+                size = tamanho do campo
+                pattern = uso de expressão regular para validar o campo Ex.: usuário só poderia usar email com domínio da @rocketseat.com)
+                title = indicativo ao usuário
+                list = linkado a uma datalist já utilizado pelo usuário para acessar | só sugestão.
+        
+        file = enviar arquivos
+                atributos:
+
+                value
+                accept = tipos de arquivos que são aceitos (.doc /.pdf /image/.png ...)
+                multiple = permite o envio de múltiplos arquivos de vez
+        Toda vez que for usar form do tipo file precisa de uma estrutura básica
+                <form action="" method="" anctype="multipart/form-data">
+
+        color = nem todos os navegadores suportam essa tag
+
+        Checkbox = caixas que podem ser marcadas | só envia caixas selecionadas no formulário
+                    
+                    atributos:
+
+                    globais
+                    value
+
+        Hidden = campo que fica invisível ao usuário
+
+        Radio = prejetado para selecionar uma única opção. Ex.: Sim ou Não
+                    atributos
+
+                    checked = indica o campo marcado
+                    value = valor que aquele campo contém
+
+        Textarea = para grandes textos
+                    atributos:
+
+                    id = identificação
+                    name = indicação para backend
+                    rows e cols = define tamanho da caixa
+                    maxlength e minlength = quantidade máxima e mínima de caracteres
+                    wrap = quebra de linha {on / off / soft / hard}
+                    ... outros já citado {autocomplete, placehoud, disabled, form, required... }
+
+        Select = selecionar opções prédefinidas tipo lista
+                    atributos:
+                    value
+
+                    multiple = multiplas opções
+                    size = quantas opções visíveis
+
+        optgroup - usado dentro do select - agrupa itens 
+                    <label> Please choose one or more pets:
+                        select name="pets" multiples size ="8"
+                            <optgroup label="4 - legged pets">
+                                <
+
+
+        Search - Campo de busca 
+                        <input type="search" name="" id="" ut=""/>
+                    
+                    Atributos
+                    list / <datalist> - definir expressões para busca
+                    pattern - validar tipos de busca
+                    aria-label - função semelhante ao label porém invisível ao usuário
+
+        Number - inserção de números
+                        atributos:
+                        -min/max
+                        -step - define intervalos entre números
+
+        Range - inserção de números do tipo slider ou dial control
+                        atributos
+                        min/max
+                        step = define intervalos 
+
+        Data e Hora - inserção de data e horário
+        ainda com pouco suporte em alguns navegadores. {referencia. www.caniuse.com}
+
+                        type: date / datetime-local / month / time / week
+                        
+
+
+-->
+<h3>
+        Formulário de Contato
+</h3>
+
+<form action="">
+        <fieldset>
+                <legend>Contato</legend>
+                <label for="name">Nome:</label>
+                <input type="text" name="name" id="name" placeholder="Digite seu Nome">
+                <br><br>
+
+                <label for="email">Email:</label>
+                <input type="email" name="email" id="email" placeholder="Digite Email válido">
+                <br><br>
+                
+                <label for="mensagem">Mensagem:</label>
+                <br>
+                <textarea name="mensage" id="mensagem" cols="25" rows="6" placeholder="Seja Criativo..."></textarea> 
+                <br><br>
+                
+                <button type="submit">Enviar</button>
+
+        </fieldset>
+</form>
+    
+
+</body>
+</html>
